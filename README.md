@@ -18,6 +18,8 @@ This is a simple local AI-powered file organizer that automatically scans your D
 5. File is renamed and moved to organized folders  
 6. Decision is stored in memory for future consistency
 
+Notes: memory.json is intentionally cleared.
+
 Setup
 
 ### 1. Install Ollama
@@ -27,4 +29,4 @@ Run a model:
 ```bash
 ollama run phi
 
-Notes: memory.json is intentionally cleared.
+
