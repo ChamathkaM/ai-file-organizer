@@ -1,4 +1,5 @@
 import os
+import time
 from ai_utils import analyze_file
 from file_utils import (
     get_all_files,
@@ -24,14 +25,18 @@ def process_file(file_path):
 
 
 def main():
-    files = get_all_files()
+    while True:
+        files = get_all_files()
 
-    for file in files:
-        if os.path.isfile(file):
-            try:
-                process_file(file)
-            except Exception as e:
-                print(f"Error processing {file}: {e}")
+        for file in files:
+            if os.path.isfile(file):
+                try:
+                    process_file(file)
+                except Exception as e:
+                    print(f"Error processing {file}: {e}")
+
+        print("Waiting for new files...")
+        time.sleep(60) 
 
 
 if __name__ == "__main__":
